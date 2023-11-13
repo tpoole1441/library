@@ -18,10 +18,14 @@ function partitionBooksByBorrowedStatus(books) {
   return [borrowed, returned];
 }
 
+function findItemById(items, id) {
+  return items.find((item) => item.id === id);
+}
+
 function getBorrowersForBook(book, accounts) {
   const bookBorrows = book.borrows;
   const borrowers = bookBorrows.map((borrow) => {
-    const account = accounts.find((acc) => acc.id === borrow.id);
+    const account = findItemById(accounts, borrow.id);
     return {
       ...account,
       returned: borrow.returned,
