@@ -17,7 +17,7 @@ function partitionBooksByBorrowedStatus(books) {
   );
   return [borrowed, returned];
 }
-// This is my helper function for the getBorrowersFor Book function
+// This is my helper function for the getBorrowersForBook function
 function findItemById(items, id) {
   return items.find((item) => item.id === id);
 }
